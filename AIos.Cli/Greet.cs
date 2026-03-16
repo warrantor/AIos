@@ -18,8 +18,7 @@ public class GreetSettings : CommandSettings
   
 public class GreetCommand : Command<GreetSettings>
 {
-    public override int Execute(CommandContext context, GreetSettings settings, CancellationToken cancellation)
-    {
+    public override int Execute(CommandContext context, GreetSettings settings, CancellationToken cancellation) {
         for (var i = 0; i < settings.Count; i++)
         {
             AnsiConsole.MarkupLine($"Hello, [green]{settings.Name}[/]!");

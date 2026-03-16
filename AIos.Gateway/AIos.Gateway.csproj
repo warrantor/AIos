@@ -9,10 +9,13 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AIos.Core\AIos.Core.csproj" />
+      <ProjectReference Include="..\AIos.Sdk\AIos.Sdk.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="FastEndpoints" Version="8.0.1" />
+      <PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="10.4.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.5" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,8 +1,5 @@
-﻿using AIos.Cli;
+﻿using AIos.Cli.Commands;
 using Spectre.Console.Cli;
 
-
-var app = new CommandApp<GreetCommand>();
+var app = new CommandApp<ChatCommand>();
 return app.Run(args);
-
-
