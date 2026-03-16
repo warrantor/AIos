@@ -1,0 +1,7 @@
+﻿services:
+  aios-gateway:
+    image: aios-gateway
+    build:
+      context: .
+      dockerfile: AIos.Gateway/Dockerfile
+

@@ -1,0 +1,34 @@
+<Solution>
+  <Folder Name="/0. Solution Items/">
+    <File Path="compose.yaml" />
+  </Folder>
+  <Folder Name="/Addons/" />
+  <Folder Name="/Addons/SDK/" />
+  <Folder Name="/Addons/SDK/Dotnet/" />
+  <Folder Name="/Addons/SDK/Dotnet/src/">
+    <Project Path="AIos.Sdk/AIos.Sdk.csproj" />
+  </Folder>
+  <Folder Name="/Addons/SDK/Python/" />
+  <Folder Name="/Addons/SDK/Python/src/" />
+  <Folder Name="/Addons/SDK/Typescript/" />
+  <Folder Name="/Addons/SDK/Typescript/src/" />
+  <Folder Name="/Core/" />
+  <Folder Name="/Core/src/">
+    <Project Path="AIos.Core/AIos.Core.csproj" />
+  </Folder>
+  <Folder Name="/Core/tests/" />
+  <Folder Name="/Gateway/" />
+  <Folder Name="/Gateway/src/">
+    <Project Path="AIos.Gateway/AIos.Gateway.csproj" />
+  </Folder>
+  <Folder Name="/Gateway/tests/" />
+  <Folder Name="/UI/" />
+  <Folder Name="/UI/CLI/" />
+  <Folder Name="/UI/CLI/src/">
+    <Project Path="AIos.Cli/AIos.Cli.csproj" />
+  </Folder>
+  <Folder Name="/UI/CLI/tests/" />
+  <Folder Name="/UI/Web/" />
+  <Folder Name="/UI/Web/src/">
+  </Folder>
+</Solution>
