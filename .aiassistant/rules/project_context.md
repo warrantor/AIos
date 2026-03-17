@@ -2,7 +2,11 @@
 apply: always
 ---
 
-# Solution structure (AIos.slnx)
+# Technical / Architecture Context
+Check [functional_context](./functional_context.md) for how the app should behave.
+Current state of implementation you will find in the [roadmap](./implementation_roadmap.md)
+
+## Solution structure (AIos.slnx)
 
 Overview of the solution layout and projects for prompt context.
 When this changes, update the section.
