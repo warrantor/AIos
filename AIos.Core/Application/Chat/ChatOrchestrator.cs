@@ -1,22 +1,27 @@
 using System.Runtime.CompilerServices;
-using Microsoft.Extensions.AI;
+using AIos.Core.Application.Llm;
+using SdkMessage = AIos.Sdk.Chat.ChatMessage;
 
 namespace AIos.Core.Application.Chat;
 
 public interface IChatOrchestrator {
-    IAsyncEnumerable<string> StreamAsync(IReadOnlyList<ChatMessage> history, CancellationToken ct = default);
+    IAsyncEnumerable<string> StreamAsync(IReadOnlyList<SdkMessage> history, string? providerId = null, CancellationToken ct = default);
 }
 
 public sealed class ChatOrchestrator : IChatOrchestrator {
-    private readonly IChatClient _client;
+    private readonly ILlmProviderFactory _providerFactory;
 
-    public ChatOrchestrator(IChatClient client) {
-        _client = client;
+    public ChatOrchestrator(ILlmProviderFactory providerFactory) {
+        _providerFactory = providerFactory;
     }
 
-    public async IAsyncEnumerable<string> StreamAsync(IReadOnlyList<ChatMessage> history, [EnumeratorCancellation] CancellationToken ct = default) {
-        await foreach (var update in _client.GetStreamingResponseAsync(history, cancellationToken: ct)) {
-            if (update.Text is { Length: > 0 } text) {
+    public async IAsyncEnumerable<string> StreamAsync(IReadOnlyList<SdkMessage> history, string? providerId = null,
+        [EnumeratorCancellation] CancellationToken ct = default) {
+        var request = new LlmCompletionRequest(history.Select(m => new LlmMessage(m.Role.Value, m.Content)).ToList());
+        var provider = _providerFactory.GetProvider(providerId);
+
+        await foreach (var chunk in provider.StreamCompleteAsync(request, ct)) {
+            if (chunk.Token is { Length: > 0 } text) {
                 yield return text;
             }
         }

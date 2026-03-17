@@ -16,7 +16,9 @@
   <Folder Name="/Core/src/">
     <Project Path="AIos.Core/AIos.Core.csproj" />
   </Folder>
-  <Folder Name="/Core/tests/" />
+  <Folder Name="/Core/tests/">
+    <Project Path="AIos.Core.Tests/AIos.Core.Tests.csproj" />
+  </Folder>
   <Folder Name="/Gateway/" />
   <Folder Name="/Gateway/src/">
     <Project Path="AIos.Gateway/AIos.Gateway.csproj" />

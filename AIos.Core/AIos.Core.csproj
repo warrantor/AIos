@@ -12,6 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Anthropic.SDK" Version="5.10.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -22,7 +23,7 @@
 
     <ItemGroup>
       <Folder Include="Data\" />
-      <Folder Include="Domain\" />
+      <Folder Include="Domain\Agents\" />
       <Folder Include="Infrastructure\" />
     </ItemGroup>
 

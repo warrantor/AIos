@@ -28,6 +28,9 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 
+# Local env
+appsettings.Development.json
+
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
 
